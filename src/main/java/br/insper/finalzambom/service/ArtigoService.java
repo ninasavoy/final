@@ -9,25 +9,25 @@ import java.util.List;
 @Service
 public class ArtigoService {
 
-    private final ArtigoRepository artigoRepository;
+    private final ArtigoRepository ArtigoRepository;
 
-    public ArtigoService(ArtigoRepository artigoRepository) {
-        this.artigoRepository = artigoRepository;
+    public ArtigoService(ArtigoRepository ArtigoRepository) {
+        this.ArtigoRepository = ArtigoRepository;
     }
 
-    public Artigo criarArtigo(Artigo artigo) {
-        return artigoRepository.save(artigo);
+    public void createArtigo(Artigo Artigo) {
+        ArtigoRepository.save(Artigo);
     }
 
-    public void deletarArtigo(String id) {
-        artigoRepository.deleteById(id);
+    public void deleteArtigo(String id) {
+        ArtigoRepository.deleteById(id);
     }
 
-    public List<Artigo> listarArtigos() {
-        return artigoRepository.findAll();
+    public List<Artigo> getAllArtigos() {
+        return ArtigoRepository.findAll();
     }
 
-    public Artigo buscarArtigo(String id) {
-        return artigoRepository.findById(id).orElseThrow(() -> new RuntimeException("Artigo não encontrado"));
+    public Artigo getArtigoById(String id) {
+        return ArtigoRepository.findById(id).orElse(null);
     }
 }
