@@ -1,5 +1,6 @@
 package br.insper.finalzambom.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -13,7 +14,7 @@ public class UserService {
 
     private final RestTemplate restTemplate;
 
-    public UserService(RestTemplate restTemplate) {
+    public UserService(@Autowired RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
